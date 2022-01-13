@@ -3,6 +3,10 @@
 
 For a detailed description of the method, please refer to "./doc/xView3_competition_third_place_solution.pdf".
 
+The submission docker image com be download from docker hub.
+```
+docker pull sanxia04/heatmap:v4.1
+```
 ## Getting Started
 
 Clone the repository:
