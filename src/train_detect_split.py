@@ -165,7 +165,7 @@ def train(args):
             recall_4 = '%.4f'%C_recall
             torch.save(state, "{}ckpt/{}_f1_{}_rec_{}_acc_{}.pkl".format(args.data_path, args.model, f1_4, recall_4, acc_4))
             if args.finetune:
-                torch.save(state, "{}ckpt/{}_best.pkl".format(args.data_path,args.model))
+                torch.save(state, "{}ckpt/{}_finetune_best.pkl".format(args.data_path,args.model))
             else:
                 torch.save(state, "{}ckpt/{}_scrach_best.pkl".format(args.data_path,args.model))
             no_optim = 0
@@ -187,7 +187,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Hyperparams')
     parser.add_argument("--seed", default=2, type=int)
-    parser.add_argument("--finetune", type=bool, default=True)
+    parser.add_argument("--finetune", type=bool, default=False)
     parser.add_argument('--model', nargs='?', type=str, default='hrnet',
                         help='Dataset to use [\'cityscapes, mvd etc\']')
     parser.add_argument('--img_rows', nargs='?', type=int, default=512,

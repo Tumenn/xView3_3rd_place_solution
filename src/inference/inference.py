@@ -201,7 +201,7 @@ def test(args):
     valid_start_point = np.load("valid_start_point.npy")
     valid_scene_id = [i.strip() for i in open("./valid_scene_id.txt", "r").readlines()]
 
-    ckpt_list = glob.glob("/home/ckpt/hrnet_*.pkl")
+    ckpt_list = glob.glob("../../data/ckpt/hrnet_*_finetune_best.pkl")
     print(len(ckpt_list), "Load det models")
     time_det_load = time.time()
     models_det = []
@@ -215,7 +215,7 @@ def test(args):
         # break
     print("det models load, {}, {}".format(len(models_det), time.time()-time_det_load))
 
-    ckpt_list = glob.glob("/home/ckpt/res101_merge_*.pkl")
+    ckpt_list = glob.glob("../../data/ckpt/res101_merge_*_best.pkl")
     print(len(ckpt_list), "Load class models")
     time_class_load = time.time()
     models_class = []
@@ -321,7 +321,7 @@ def test(args):
             no_vessel_heat = cv2.imread("../test_result/{}_No_Vessel.png".format(scene_id), 0)
 
             thres_0 = np.max(vessel_heat) * 0.1 / 255.0
-            thres_1 = np.max(no_vessel_heat) * 0.1 / 255.0           
+            thres_1 = np.max(no_vessel_heat) * 0.1 / 255.0
 
             out_heat[0] = vessel_heat
             out_heat[1] = no_vessel_heat
