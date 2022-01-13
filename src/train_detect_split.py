@@ -59,9 +59,8 @@ def train(args):
         args.resume = "{}/ckpt/{}_scrach_best.pkl".format(args.data_path, args.model)
         model.load_state_dict(torch.load(args.resume)['model_state'])
     else:
-        # model.init_weights("../../data/ckpt/hrnetv2_{}_imagenet_pretrained.pth".format(hr_cfg))
         print("initial weight from imagenet")
-        model.init_weights("/amax/home/dlh/data/pretrained/hrnetv2_w48_imagenet_pretrained.pth")
+        model.init_weights("{}/ckpt/hrnetv2_w48_imagenet_pretrained.pth".format(args.data_path))
     # return
     model = model.cuda()
     optimizer = torch.optim.Adam(model.parameters(), lr=args.l_rate)
