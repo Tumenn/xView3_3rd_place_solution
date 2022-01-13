@@ -1,7 +1,7 @@
 # xView3_3rd_place_solution
 3rd place solution for xView3 challenge https://iuu.xview.us/
 
-For a detailed description of the method, please refer to [solution](./doc/xView3 competition third place solution.pdf)
+For a detailed description of the method, please refer to "./doc/xView3_competition_third_place_solution.pdf".
 
 ## Getting Started
 
