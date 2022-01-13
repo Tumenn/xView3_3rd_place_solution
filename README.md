@@ -50,6 +50,7 @@ python classfication.py
 ```
 
 After process, the structure of the data folder should be:
+```
 ├── data
     ├── raw_data                   # xview3 competition dataset
     ├── split_txt                  # store k fold image path
